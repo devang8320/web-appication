@@ -21,11 +21,18 @@ const login= async(data)=> {
     setError("")
 
     try {
+        const currentSession = await authService.getSession(); // Add this method in your authService
+        
+        if (currentSession) {
+            console.log("Session already active. Logging out...");
+            await authService.logout(); // Log out the existing session
+        }
+        
         const session = await authService.login(data)
 
     if (session){
         const useData = await authService.getCurrentUser()
-        if (useData) dispatech(authLogin.login(useData));
+        if (useData) dispatech(authLogin(useData));
         navigate("/")
     }
         

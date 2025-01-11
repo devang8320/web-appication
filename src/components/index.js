@@ -9,5 +9,8 @@ import PostCard from "./PostCard"
 import Button from "./Button"
 import Login from "./Login"
 import Signup from "./SignUp"
+import RTE from "./RTE"
+import PostForm from "./post-form/PostForm"
+import AuthLayout from './AuthLayout'
 
-export {Header, Footer, Container,Logo, LogoutBtn, Input, Select, PostCard, Button, Login, Signup}
+export {Header, Footer, Container,Logo, LogoutBtn, Input, Select, PostCard, Button, Login, Signup, RTE, PostForm, AuthLayout}

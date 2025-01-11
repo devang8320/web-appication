@@ -38,6 +38,16 @@ export class AuthService {
         }
     }
 
+    async getSession() {
+        try {
+            // Fetch the current session
+            return await this.account.getSession('current');
+        } catch (error) {
+            console.log("AuthService :: getSession :: No active session", error);
+            return null; // Return null if no active session exists
+        }
+    }
+
     async login({email, password}){
         try {
             return await this.account.createEmailPasswordSession(
